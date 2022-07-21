@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrlShortner</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+    
+</head>
+<body>
+    <form class="form-design" method="post" action="{% url 'create' %}">
+        {%csrf_token%}
+        <div class="heading">
+            <h1>Url Shortner</h1>
+        </div>
+        <div class="text">
+        <input type="text" class="input" name="url" placeholder="Enter Url here"/>
+        </div>
+        <div class="buttons">
+            <input type="submit" value="Short Url"/> 
+        </div>
+        <section>
+            {% block start %}
+
+    		{% endblock %}
+
+        </section>
+    </form>
+   </body>
+</html>
